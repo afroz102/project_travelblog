@@ -10,7 +10,7 @@ if(process.env.NODE_ENV == 'production' || process.env.NODE_ENV == 'staging') {
     var dbURL = 'mongodb+srv://'+DB_USERNAME+':'+DB_PASSWORD+'@'+DB_URL;
 }
 else {
-    var dbURL = 'mongodb://localhost:27017/whitecollardb'
+    var dbURL = 'mongodb://localhost:27017/travelblog'
 }
 function connect() {
     return mongoose.connect(dbURL, {
