@@ -7,8 +7,10 @@ const currentTime = moment().format('lll');
 //Schema
 const postSchema = new mongoose.Schema(
     [{
-        post: String,
-        imageUrl: String,
+        title: String,
+        description: String,
+        content: String,
+        image: String,
         date: { type: Date, default: currentTime }
     }],
     {

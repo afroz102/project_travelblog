@@ -41,6 +41,8 @@ app.get('/hotels', function (req, res) {
 });
 
 app.post('/post', postControllers.getPost);
+app.get('/post/new', postControllers.addPost)
+app.post('/post/new', postControllers.addNewPost);
 app.post('/', cpUpload, postControllers.addPost);
 app.post('/comment:id', postControllers.postComment);
 // Start the app on pre defined port number

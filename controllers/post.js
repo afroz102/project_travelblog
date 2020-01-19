@@ -8,10 +8,15 @@ PostController.getPost = function (req,res) {
     res.render();
 }
 PostController.addPost = function (req,res) {
-    res.render();
+    res.render('addBlog');
+}
+PostController.addNewPost = function(req, res){
+    //console.log(req.body)
+    PostModel.create(req.body, (error, post) => {
+        res.redirect('/')
+    })
 }
 PostController.postComment = function (req,res) {
     res.render();
 }
-
 module.exports = PostController;
