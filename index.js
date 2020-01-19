@@ -24,9 +24,9 @@ app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
 
-app.get('/', function (req, res) { 
+app.get('/', postControllers.getPost)/* function (req, res) { 
     res.render('home'); 
-});
+}); */
 app.get('/about', function (req, res) { 
     res.render('aboutTheBlogger'); 
 });
@@ -40,7 +40,7 @@ app.get('/hotels', function (req, res) {
     res.render('hotels') 
 });
 
-app.post('/post', postControllers.getPost);
+//app.post('/post', postControllers.getPost);
 app.get('/post/new', postControllers.addPost)
 app.post('/post/new', postControllers.addNewPost);
 app.post('/', cpUpload, postControllers.addPost);
