@@ -10,18 +10,22 @@ PostController.getPost = function (req,res) {
                 message: error
             });
         }
-        console.log(data)
-        return res.render('home', {data:data})
+        console.log("data",data);
+        return res.render('home', {
+            status:true,
+            data: data.reverse()
+        });
     });
 }
 PostController.addPost = function (req,res) {
     res.render('addBlog');
 }
 PostController.addNewPost = function(req, res){
-    //console.log(req.body)
+    // var data = req.body;
+    // console.log("Post data", data);
     PostModel.create(req.body, (error, post) => {
-        res.redirect('/')
-    })
+        res.redirect('/');
+    });
 }
 PostController.postComment = function (req,res) {
     res.render();
