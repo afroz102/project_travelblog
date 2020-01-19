@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const moment = require('moment');
 const currentTime = moment().format('lll');
-console.log("current time>>>",currentTime);
+// console.log("current time>>>",currentTime);
 
 //Schema
 const postSchema = new mongoose.Schema(
