@@ -10,11 +10,11 @@
     </div>
   </div>
 </header>
- 
+
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <form action="/post/new" method="POST">
+      <form action="/post/new" method="POST" enctype="multipart/form-data">
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>Title</label>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="form-group mt-3">
-          <input type="file" name="image" class="form-control-file">
+          <input type="file" name="image" id="image-input" accept="image/jpeg, image/jpg, image/png, image/*" />
         </div>
         <div class="form-group my-4 text-center">
           <button class="btn btn-primary">Create Post</button>
@@ -43,3 +43,9 @@
     </div>
   </div>
 </div>
+
+<style>
+  #post-button-id {
+    display: none;
+  }
+</style>

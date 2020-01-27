@@ -9,6 +9,8 @@
   "author": "afroz",
   "license": "ISC",
   "dependencies": {
+    "async": "^3.1.1",
+    "cloudinary": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "moment": "^2.24.0",

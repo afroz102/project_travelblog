@@ -72,7 +72,11 @@
                 <div class="mx-2" id="row-home-03-img-01">
                     <a href="#">
                         <div class="ml-4">
+                            {{#if this.image}}
+                            <img src="{{this.image}}" alt="image">
+                            {{else}}
                             <img src="/images/homeImage.jpeg" alt="image">
+                            {{/if}}
                             <h4>{{this.title}}</h4>
                         </div>
                         <!--  -->

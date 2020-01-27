@@ -3,13 +3,16 @@
 
 <head>
     <title>{{{title}}}</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5eb08b3082.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        id="bootstrap-css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href={{css_file_ref}} type="text/css">
@@ -20,11 +23,17 @@
             text-align: center;
             font-weight: 900;
         }
+        #post-button-id{
+            float: right;
+        }
     </style>
 </head>
 
 <body>
     <div class="container-fluid" id="page-container">
+        <div class="post-button-class" id="post-button-id">
+            <a class="btn btn-primary" href="/login" role="button">ADD YOUR POST</a>
+        </div>
         <div class="row mt-5">
             <div class="col-md-6 text-center mx-auto" id="header-desc">
                 <h1 class="" id="site-title">
@@ -94,4 +103,5 @@
     <script type="text/javascript" src={{script}}></script>
 </body>
 {{!-- https://blog.thekgnenterprise.com/ --}}
+
 </html>

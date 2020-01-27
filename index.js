@@ -11,11 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 const fileStorage = multer.diskStorage({});
-const upload = multer({
-	storage: fileStorage
-});
+const upload = multer({ storage: fileStorage });
 var cpUpload = upload.fields([
-	{ name: 'imagefile', maxCount: 1 }
+	{ name: 'image', maxCount: 2 }
 ]);
 
 // Configure Handlebars
@@ -24,9 +22,10 @@ app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
 
-app.get('/', postControllers.getPost)/* function (req, res) { 
-    res.render('home'); 
-}); */
+app.get('/', postControllers.getPost);
+app.get('/login',function (req, res) { 
+    res.render('login'); 
+});
 app.get('/about', function (req, res) { 
     res.render('aboutTheBlogger'); 
 });
@@ -40,14 +39,14 @@ app.get('/hotels', function (req, res) {
     res.render('hotels') 
 });
 
-//app.post('/post', postControllers.getPost);
+app.post('/login', postControllers.login);
 app.get('/post/new', postControllers.addPost);
 app.post('/post/new', cpUpload, postControllers.addNewPost);
 // app.post('/post/new', cpUpload, postControllers.addPost);
-app.post('/comment:id', postControllers.postComment);
+// app.post('/comment:id', postControllers.postComment);
 // Start the app on pre defined port number
 const env = process.env.NODE_ENV || 'default';
-const PORT = process.env.PORT || 9090;
+const PORT = process.env.PORT || 3000;
 db.connect()
 	.then(function () {
 		app.listen(PORT, function () {
